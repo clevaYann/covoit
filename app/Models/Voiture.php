@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Voiture extends Model
+{
+    // Relation: estProprietaire (L'employé qui possède la voiture)
+    public function employe()
+    {
+        return $this->belongsTo(Employe::class, 'employe_id');
+    }
+
+    // Relation: Conduit (Une voiture est utilisée pour plusieurs trajets)
+    public function trajets()
+    {
+        return $this->hasMany(Trajet::class);
+    }
+}

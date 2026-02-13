@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('employe_trajet', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('employe_id')->constrained('employes')->onDelete('cascade');
             $table->foreignId('trajet_id')->constrained('trajets')->onDelete('cascade');
-            $table->dateTime('date_inscription'); // Attribut de la relation [cite: 28]
+            $table->dateTime('date_inscription');
+            $table->primary(['employe_id','trajet_id', 'date_inscription' ]);
             $table->timestamps();
         });
     }
