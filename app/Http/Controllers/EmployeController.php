@@ -11,14 +11,14 @@ class EmployeController extends Controller
     public function index()
     {
         $employes = Employe::all();
-        return $employes;
+        return view('employes.index', compact('employe'));
     }
 
     // Récupérer un employé par ID
     public function show($id)
     {
         $employe = Employe::findOrFail($id);
-        return $employe;
+        return view('employes.show', compact('employe'));
     }
 
     // Créer un nouvel employé

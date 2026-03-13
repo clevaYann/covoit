@@ -10,9 +10,9 @@ Route::get('/', function () {
 
 // Routes EmployeController
 Route::prefix('employes')->group(function () {
-    Route::get('/', [EmployeController::class, 'index']);
+    Route::get('/', [EmployeController::class, 'index'])->name('employes.index');
     Route::post('/', [EmployeController::class, 'store']);
-    Route::get('/{id}', [EmployeController::class, 'show']);
+    Route::get('/{id}', [EmployeController::class, 'show'])->name('employes.show');
     Route::put('/{id}', [EmployeController::class, 'update']);
     Route::delete('/{id}', [EmployeController::class, 'destroy']);
     Route::get('/{id}/compter-voitures', [EmployeController::class, 'compterVoitures']);
