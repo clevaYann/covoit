@@ -22,11 +22,11 @@ Route::prefix('employes')->group(function () {
 
 // Routes VehiculeController
 Route::prefix('vehicules')->group(function () {
-    Route::get('/', [VehiculeController::class, 'index']);
-    Route::post('/', [VehiculeController::class, 'store']);
-    Route::get('/{id}', [VehiculeController::class, 'show']);
-    Route::put('/{id}', [VehiculeController::class, 'update']);
-    Route::delete('/{id}', [VehiculeController::class, 'destroy']);
-    Route::get('/rechercher/{modele}', [VehiculeController::class, 'rechercherParModele']);
-    Route::get('/employe/{id_employe}', [VehiculeController::class, 'vehiculesParEmploye']);
+    Route::get('/', [VehiculeController::class, 'index'])->name('vehicules.index');
+    Route::post('/', [VehiculeController::class, 'store'])->name('vehicules.store');
+    Route::get('/{id}', [VehiculeController::class, 'show'])->name('vehicules.show');
+    Route::put('/{id}', [VehiculeController::class, 'update'])->name('vehicules.update');
+    Route::delete('/{id}', [VehiculeController::class, 'destroy'])->name('vehicules.destroy');
+    Route::get('/rechercher/{modele}', [VehiculeController::class, 'rechercherParModele'])->name('vehicules.rechercher');
+    Route::get('/employe/{id_employe}', [VehiculeController::class, 'vehiculesParEmploye'])->name('vehicules.employe');
 });

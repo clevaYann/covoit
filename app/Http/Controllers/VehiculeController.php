@@ -17,8 +17,8 @@ class VehiculeController extends Controller
     // Récupérer un véhicule par ID
     public function show($id)
     {
-        $voiture = Voiture::findOrFail($id);
-        return $voiture;
+        $voiture = Voiture::with('employe')->findOrFail($id);
+        return view('vehicules.show', compact('voiture'));
     }
 
     // Créer un nouveau véhicule
