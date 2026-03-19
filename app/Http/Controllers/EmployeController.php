@@ -11,7 +11,7 @@ class EmployeController extends Controller
     public function index()
     {
         $employes = Employe::all();
-        return view('employes.index', compact('employe'));
+        return view('employes.index', compact('employes'));
     }
 
     // Récupérer un employé par ID
