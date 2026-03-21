@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Covoit Application - Liste des employés</title>
-    
-</head>
+@extends('layouts.main')
+
+@section('tilte','Liste des employés')
+
+@section('body')
+
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Covoit Application</h1>
-            <p class="page-title">Liste des employés</p>
-        </div>
 
         @if($employes->count() > 0)
             <table class="employes-table">
@@ -42,10 +35,7 @@
                 <p>Aucun employé trouvé.</p>
             </div>
         @endif
-
-        <div class="footer">
-            <p>Site développé par les BUT2</p>
-        </div>
     </div>
 </body>
-</html>
+
+@endsection

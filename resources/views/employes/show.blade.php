@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Covoit Application - Profil Employé</title>
-   
-</head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Covoit Application</h1>
             <p>Employés / Voitures / Trajets / Campus</p>
         </div>
 
@@ -108,54 +98,6 @@
                 </div>
             @endif
         </div>
-
-        <div class="footer">
-            <p>Site développé par les BUT2</p>
-        </div>
     </div>
-
-    <script>
-        function verifierModele() {
-            const modele = document.getElementById('modele').value.trim();
-            const resultDiv = document.getElementById('verificationResult');
-
-            if (!modele) {
-                resultDiv.classList.remove('show', 'yes', 'no');
-                return;
-            }
-
-            // Récupérer le token CSRF depuis la meta tag
-            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-            fetch('{{ route("employes.show", $employe->id) }}/possede-modele', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken
-                },
-                body: JSON.stringify({ modele: modele })
-            })
-            .then(response => response.json())
-            .then(data => {
-                const result = data.possede ? 'YES' : 'NO';
-                const resultClass = data.possede ? 'yes' : 'no';
-
-                resultDiv.innerHTML = `<strong>Résultat :</strong> ${result}`;
-                resultDiv.classList.add('show', resultClass);
-            })
-            .catch(error => {
-                console.error('Erreur:', error);
-                resultDiv.innerHTML = '<strong>Erreur lors de la vérification.</strong>';
-                resultDiv.classList.add('show', 'no');
-            });
-        }
-
-        // Permettre d'appuyer sur Entrée pour vérifier
-        document.getElementById('modele').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                verifierModele();
-            }
-        });
-    </script>
 </body>
-</html>
+    
