@@ -21,10 +21,7 @@
 
         <div class="content-wrapper">
             <!-- Profil Employé -->
-            @include('partials.info-employes')
-
-               
-
+                @include('partials.info-employes')
                 <div id="verificationResult" class="verification-result">
                     <!-- Le résultat s'affichera ici -->
                 </div>
