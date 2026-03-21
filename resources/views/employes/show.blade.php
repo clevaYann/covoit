@@ -1,3 +1,9 @@
+@extends('layouts.main')
+
+@section('tilte','Liste des employés')
+
+@section('body')
+
 <body>
     <div class="container">
         <div class="header">
@@ -101,3 +107,5 @@
     </div>
 </body>
     
+
+@endsection
