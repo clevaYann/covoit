@@ -17,24 +17,13 @@
             <a href="#voitures">Voitures</a>
             <a href="#trajets">Trajets</a>
         </div>
+        <br>
 
         <div class="content-wrapper">
             <!-- Profil Employé -->
             @include('partials.info-employes')
 
-            <!-- Vérification de Modèle -->
-            <div class="verification-section">
-                <div class="profile-title">Vérification Modèle</div>
-                <div class="form-group">
-                    <label class="form-label" for="modele">Modèle à chercher</label>
-                    <input 
-                        type="text" 
-                        id="modele" 
-                        class="form-input" 
-                        placeholder="Ex: Kia, Toyota, BMW..."
-                    >
-                </div>
-                <button class="form-button" onclick="verifierModele()">Vérifier</button>
+               
 
                 <div id="verificationResult" class="verification-result">
                     <!-- Le résultat s'affichera ici -->
@@ -44,18 +33,27 @@
 
         <!-- Section Activité -->
         <div class="profile-card">
-            <div class="profile-title">Activité</div>
+            <div class="profile-title">Activité</div><br>
             <div class="activity-section">
                 <div>
-                    <strong>Statut :</strong>
-                    <div class="status-badge status-driver">{{ $employe->statutConducteur() }}</div>
+                    <div class="status-badge status-driver">Statut: {{ $employe->statutConducteur() }}</div><br>
                 </div>
             </div>
         </div>
 
         <!-- Section Voitures -->
-        <div class="vehicles-section" id="voitures">
-            <div class="section-title">Voiture</div>
+        <form id="verificationForm" class="verification-form">
+            <div class="form-group">
+                <label for="verificationInput">Voiture</label>
+                <input type="text" id="verificationInput" name="verificationInput" placeholder="Modele a rechercher">
+                <button type="submit" class="btn-verify">Vérifier</button>
+         <!-- resultat de la verification -->
+                <div id="verificationResult" class="verification-result">
+                    <!-- Le résultat s'affichera ici -->
+                </div>
+            </div>
+        </form>
+         
 
             @if($employe->voitures->count() > 0)
                 <table class="vehicles-table">
