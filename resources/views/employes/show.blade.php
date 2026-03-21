@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('tilte','Liste des employés')
+@section('title','Détails de l\'employé')
 
 @section('body')
 

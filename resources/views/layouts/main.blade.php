@@ -1,5 +1,5 @@
 <html>
-    <head> <title>@yield('zone1','valDefault')</title></head>
+    <head> <title>@yield('title','Site de covoiturage')</title></head>
     <body>
         @include('partials.header')
 

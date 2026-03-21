@@ -6,6 +6,9 @@
 
 <body>
     <div class="container">
+        <div class="header">
+            <p>Liste des employés</p>
+        </div>
 
         @if($employes->count() > 0)
             <table class="employes-table">
