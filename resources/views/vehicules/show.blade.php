@@ -21,11 +21,11 @@
                 <div class="card-title">Voiture</div><br>
                 <div class="card-content">
                     <div class="info-row">
-                        <span class="info-label">Modèle</span>
+                        <span class="info-label">Modèle: </span>
                         <span class="info-value">{{ $voiture->modele }}</span>
                     </div>
                     <div class="info-row">
-                        <span class="info-label">Nb Place</span>
+                        <span class="info-label">Nb Place: </span>
                         <span class="info-value">{{ $voiture->nb_places }}</span>
                     </div><br>
                 </div>
@@ -38,6 +38,7 @@
             </div>
             
     </div>
+    <script src="/resources/js/vehicules.js"></script>
 </body>
 </html>
 @endsection

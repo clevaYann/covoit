@@ -10,7 +10,7 @@
             <p>Liste des employés</p>
         </div>
 
-        @if($employes->count() > 0)
+        @if($employe->count() > 0)
             <table class="employes-table">
                 <thead>
                     <tr>
@@ -21,7 +21,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($employes as $employe)
+                    @foreach ($employe as $employe)
                         <tr>
                             <td>{{ $employe->nom }}</td>
                             <td>{{ $employe->prenom }}</td>

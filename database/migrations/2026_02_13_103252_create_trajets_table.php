@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('trajets', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('date_time_depart'); // [cite: 34]
-            $table->dateTime('date_time_arrivee'); // [cite: 34]
+            $table->dateTime('date_time_depart'); 
+            $table->dateTime('date_time_arrivee'); 
         
             // Relation "Conduit" (Voiture) [cite: 33]
             $table->foreignId('voiture_id')->constrained('voitures')->onDelete('cascade');
         
-            // Relations CampusDepart et CampusArrive [cite: 29, 35]
+            // Relations CampusDepart et CampusArrive 
             $table->foreignId('campus_depart_id')->constrained('campuses');
             $table->foreignId('campus_arrive_id')->constrained('campuses');
         

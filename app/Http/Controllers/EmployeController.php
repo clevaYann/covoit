@@ -10,8 +10,8 @@ class EmployeController extends Controller
     // Récupérer tous les employés
     public function index()
     {
-        $employes = Employe::all();
-        return view('employes.index', compact('employes'));
+        $employe = Employe::all();
+        return view('employes.index', compact('employe'));
     }
 
     // Récupérer un employé par ID

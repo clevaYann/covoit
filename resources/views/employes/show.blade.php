@@ -80,6 +80,7 @@
             @endif
         </div>
     </div>
+    <script src="/resources/js/vehicules.js"></script>
 </body>
     
 
