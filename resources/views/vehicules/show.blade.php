@@ -38,7 +38,7 @@
             </div>
             
     </div>
-    <script src="/resources/js/vehicules.js"></script>
+    <script src="{{ asset('js/vehicules.js') }}"></script>
 </body>
 </html>
 @endsection
