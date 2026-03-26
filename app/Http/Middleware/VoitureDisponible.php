@@ -18,10 +18,20 @@ class VoitureDisponible
     {
         $employe = Employe::find($request->route('id'));
         if (!$employe) {
+            if ($request->expectsJson() || $request->is('api/*')) {
+                return response()->json(['message' => 'Employe introuvable.'], 404);
+            }
+
             return redirect()->route('employes.index')->with('error', 'Employe introuvable.');
         }
 
         if ($employe->voitures()->count() === 0) {
+            if ($request->expectsJson() || $request->is('api/*')) {
+                return response()->json([
+                    'message' => 'Aucune voiture enregistree pour cet employe.',
+                ], 403);
+            }
+
             return redirect()->route('employes.ajouter-voiture', ['id' => $employe->id]);
         }
         

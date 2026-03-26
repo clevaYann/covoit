@@ -1,0 +1,402 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Covoit API",
+        "description": "Documentation Swagger de l API REST Covoit",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8092",
+            "description": "Serveur local"
+        }
+    ],
+    "paths": {
+        "/api/employes": {
+            "get": {
+                "tags": [
+                    "Employes"
+                ],
+                "summary": "Lister les employes",
+                "operationId": "18b3c2fed81de6220040032f3e63ae04",
+                "responses": {
+                    "200": {
+                        "description": "Liste des employes"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Employes"
+                ],
+                "summary": "Creer un employe",
+                "operationId": "f626c0e8dcb102defd5115963de96be5",
+                "responses": {
+                    "201": {
+                        "description": "Employe cree"
+                    },
+                    "422": {
+                        "description": "Validation echouee"
+                    }
+                }
+            }
+        },
+        "/api/employes/{id}": {
+            "get": {
+                "tags": [
+                    "Employes"
+                ],
+                "summary": "Afficher un employe",
+                "operationId": "201ce3e326001357e89c52e6205acfad",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Employe trouve"
+                    },
+                    "403": {
+                        "description": "Regle metier bloquee"
+                    },
+                    "404": {
+                        "description": "Employe introuvable"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Employes"
+                ],
+                "summary": "Mettre a jour completement un employe",
+                "operationId": "484257afbd818104e8f9b704aefcb275",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Employe mis a jour"
+                    },
+                    "422": {
+                        "description": "Validation echouee"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Employes"
+                ],
+                "summary": "Supprimer un employe",
+                "operationId": "581b71e1b79672976b4756a4d5f90a31",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Employe supprime"
+                    },
+                    "404": {
+                        "description": "Employe introuvable"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Employes"
+                ],
+                "summary": "Mettre a jour partiellement un employe",
+                "operationId": "1304c77c72533b2a00ab02a3bae71227",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Employe mis a jour partiellement"
+                    },
+                    "422": {
+                        "description": "Validation echouee"
+                    }
+                }
+            }
+        },
+        "/api/employes/{id}/compter-voitures": {
+            "get": {
+                "tags": [
+                    "Employes"
+                ],
+                "summary": "Compter les voitures d un employe",
+                "operationId": "47eac267aabf87e3e0b5d87ba4441dd7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Nombre de voitures"
+                    }
+                }
+            }
+        },
+        "/api/employes/{id}/possede-modele": {
+            "post": {
+                "tags": [
+                    "Employes"
+                ],
+                "summary": "Verifier si l employe possede un modele",
+                "operationId": "38b06ea008189115ff3ac8a12882e823",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Resultat de verification"
+                    }
+                }
+            }
+        },
+        "/api/employes/{id}/statut": {
+            "get": {
+                "tags": [
+                    "Employes"
+                ],
+                "summary": "Obtenir le statut conducteur",
+                "operationId": "9833b347049fcd21b8dd1abcfc09532d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Statut conducteur"
+                    }
+                }
+            }
+        },
+        "/api/vehicules": {
+            "get": {
+                "tags": [
+                    "Vehicules"
+                ],
+                "summary": "Lister les vehicules",
+                "operationId": "d55000cef71f82300af87f46af3af848",
+                "responses": {
+                    "200": {
+                        "description": "Liste des vehicules"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Vehicules"
+                ],
+                "summary": "Creer un vehicule",
+                "operationId": "4ba043d4234fcc8f58b3da6bdb999e09",
+                "responses": {
+                    "201": {
+                        "description": "Vehicule cree"
+                    },
+                    "422": {
+                        "description": "Validation echouee"
+                    }
+                }
+            }
+        },
+        "/api/vehicules/{id}": {
+            "get": {
+                "tags": [
+                    "Vehicules"
+                ],
+                "summary": "Afficher un vehicule",
+                "operationId": "dfe638a84be64ab51082786ee8b83deb",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Vehicule trouve"
+                    },
+                    "403": {
+                        "description": "Visualisation des bus en cours"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Vehicules"
+                ],
+                "summary": "Mettre a jour completement un vehicule",
+                "operationId": "a670e15e250b1a89d6b27a161a2b8926",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Vehicule mis a jour"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Vehicules"
+                ],
+                "summary": "Supprimer un vehicule",
+                "operationId": "5a955f92069af48630148f5d0c2f7d67",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Vehicule supprime"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Vehicules"
+                ],
+                "summary": "Mettre a jour partiellement un vehicule",
+                "operationId": "d7a485763c17c070cda9b368618ad47c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Vehicule mis a jour partiellement"
+                    }
+                }
+            }
+        },
+        "/api/vehicules/rechercher/{modele}": {
+            "get": {
+                "tags": [
+                    "Vehicules"
+                ],
+                "summary": "Rechercher des vehicules par modele",
+                "operationId": "6af4832446387599838f703a22e9d320",
+                "parameters": [
+                    {
+                        "name": "modele",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Resultats de recherche"
+                    }
+                }
+            }
+        },
+        "/api/vehicules/employe/{id_employe}": {
+            "get": {
+                "tags": [
+                    "Vehicules"
+                ],
+                "summary": "Lister les vehicules d un employe",
+                "operationId": "440a641a1043fb4ddd3eb244d1349d62",
+                "parameters": [
+                    {
+                        "name": "id_employe",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Vehicules de l employe"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Employes",
+            "description": "Operations sur la ressource employes"
+        },
+        {
+            "name": "Vehicules",
+            "description": "Operations sur la ressource vehicules"
+        }
+    ]
+}
