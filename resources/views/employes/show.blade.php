@@ -10,6 +10,10 @@
             <p>Employés / Voitures / Trajets / Campus</p>
         </div>
 
+        @if(session('bus_message'))
+            <p style="color: red; font-weight: bold;">{{ session('bus_message') }}</p>
+        @endif
+
         <a href="{{ route('employes.index') }}" class="btn-back">← Retour à la liste</a>
 
         <div class="navbar">

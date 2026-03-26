@@ -30,7 +30,11 @@ class VehiculeController extends Controller
             'employe_id' => 'required|exists:employes,id',
         ]);
 
-        Voiture::create($new_voiture);
+        $voiture = Voiture::create($new_voiture);
+
+        return redirect()
+            ->route('employes.show', ['id' => $voiture->employe_id])
+            ->with('success', 'Voiture ajoutée avec succès.');
     }
 
     // Mettre à jour un véhicule

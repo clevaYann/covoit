@@ -17,7 +17,9 @@ class CampuseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'description' => $this->faker->company() . ' Campus',
+            'adresse' => $this->faker->address(),
+            'type' => $this->faker->randomElement(['Principal', 'Secondaire', 'Annexe']),
         ];
     }
 }

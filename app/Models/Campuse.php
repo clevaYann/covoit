@@ -2,10 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Campuse extends Model
 {
+    use HasFactory;
+
+    protected $fillable = ['description', 'adresse', 'type'];
+
     // Relation: Frequente (N campus <-> N employés)
     public function employes()
     {

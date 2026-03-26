@@ -21,6 +21,13 @@ class EmployeController extends Controller
         return view('employes.show', compact('employe'));
     }
 
+    // Afficher le formulaire d'ajout de voiture pour un employé donné
+    public function ajouterVoiture($id)
+    {
+        $employe = Employe::findOrFail($id);
+        return view('employes.ajouter-voiture', compact('employe'));
+    }
+
     // Créer un nouvel employé
     public function store(Request $request)
     {

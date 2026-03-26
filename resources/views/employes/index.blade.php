@@ -10,6 +10,14 @@
             <p>Liste des employés</p>
         </div>
 
+        @if(session('error'))
+            <p style="color: red; font-weight: bold;">{{ session('error') }}</p>
+        @endif
+
+        @if(session('success'))
+            <p style="color: green; font-weight: bold;">{{ session('success') }}</p>
+        @endif
+
         @if($employe->count() > 0)
             <table class="employes-table">
                 <thead>
